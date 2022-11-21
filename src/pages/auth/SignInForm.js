@@ -20,13 +20,11 @@ function SignInForm() {
     username: "",
     password: "",
   });
-
   const { username, password } = signInData;
 
   const [errors, setErrors] = useState({});
 
   const history = useHistory();
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -43,6 +41,7 @@ function SignInForm() {
       [event.target.name]: event.target.value,
     });
   };
+
   return (
     <Row className={styles.Row}>
       <Col className="my-auto p-0 p-md-2" md={6}>
@@ -60,7 +59,7 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.password?.map((message, idx) => (
+            {errors.username?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
               </Alert>
@@ -86,7 +85,7 @@ function SignInForm() {
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               type="submit"
             >
-              Sign In
+              Sign in
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
