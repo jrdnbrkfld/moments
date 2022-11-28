@@ -51,7 +51,6 @@ function ProfilePage() {
         }));
         setProfilePosts(profilePosts);
         setHasLoaded(true);
-        console.log(profilePosts)
       } catch (err) {
         console.log(err);
       }
